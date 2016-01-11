@@ -1,0 +1,56 @@
+body{
+    
+}
+
+header{
+    
+
+}
+
+header h1{
+   
+}
+
+header span{
+    
+}
+
+
+
+h2{
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+article{   
+    width: 80%;
+    margin:auto;
+    margin-top:20px;
+}
+
+button{
+    padding:10px;
+    background-color: #E0811B;
+    color: #fff;    
+    border-radius: 4px;
+}
+
+input{
+    padding:10px;
+}
+
+#result{
+    margin-top:20px;    
+}
+
+#result ul{
+ margin-top: 10px;
+}
+    #result ul li{
+        font-style: italic;        
+    }
+
+        #result ul li a
+        {
+cursor: pointer;        
+        }

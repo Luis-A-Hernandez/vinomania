@@ -1,0 +1,213 @@
+/* 
+ * HELPER STYLES
+ */
+/* Mini reset :) */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: normal;
+    font-style: normal;
+    border: 0;
+    font-size: 1em;
+    text-decoration: none;
+    outline: none;
+}
+
+/* Thanks to HTML5 Boilerplate (http://html5boilerplate.com/)
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+body { margin: 0; font-size: 16px; line-height: 1.231; }
+
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* Thanks to HTML5 Boilerplate (http://html5boilerplate.com/)
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e
+ */
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/* Selection color Thanks to HTML5 Boilerplate (http://html5boilerplate.com/) */
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+  
+
+/* 
+ * BODY STYLES
+ */
+body {
+    font-size-adjust: none;
+    background:url("../img/img_2792.jpg");
+}
+
+/*
+ * SITE LAYOUT
+ */
+/* Content wrapper */
+.wrapper {
+  margin: 30px auto;
+  width: 90%;
+}
+
+/* Header and credits */
+.header, .credits {
+  width: 100%;
+}
+
+/* Header and credits style using web fonts (thanks to http://www.google.com/webfonts) */
+.header h1, .credits p {
+  color: #f7f7f7;
+  font-family: 'Salsa', cursive;
+  text-shadow: #070707 2px 2px 5px;
+  text-align: center;
+  line-height: 1.1em;
+}
+
+.header h1 {  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 175%;
+}
+
+.credits p {
+  margin: 10px;
+}
+
+.credits {
+  border-top: 3px solid #000;
+}
+
+.credits a:hover, 
+.credits a:focus {
+  text-shadow: #fe57a1 5px 5px 10px;
+}
+
+/* Gallery container */
+.gallery {
+  width: 100%; /* Just set it at 100% (fluid) so it works from mobile to desktop */
+}
+
+/* Gallery items. They can be a anchor <a> or a <div> */
+.gallery .gallery-item {
+  display: inline-block; /* Display inline-block, and absolutely NO FLOATS! - Thanks to the guys from http://sickdesigner.com */
+  margin-bottom: 20px;
+  width: 100%;
+  color: #333;
+  /* Each .gallery-item could be an anchor <a> to, for example, use each images as a thumbnail for a blog post.
+   So it's necessary to avoid decoration in the text */
+  text-decoration: none;
+}
+
+.gallery .gallery-item img { /* Some nice things on images */
+  max-width: 100%;
+  height: auto;
+  
+  -webkit-box-shadow: rgba(0, 0, 0, .25) 0 1px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, .25) 0 1px 3px;
+  -o-box-shadow: rgba(0, 0, 0, .25) 0 1px 3px;
+  box-shadow: rgba(0, 0, 0, .25) 0 1px 3px;
+
+  background: #fff; /* Solid background color as a fallback for IE */
+  
+  background: -moz-linear-gradient(top, #fff, #eee);
+  background: -o-linear-gradient(top, #fff, #eee);
+  background: linear-gradient(top, #fff, #eee);
+  
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.gallery .gallery-item img {  
+  display: block; /* Center horizontally the image if it's smaller than the column */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery .gallery-item:hover img,
+.gallery .gallery-item:focus img {
+  -webkit-box-shadow: rgba(0, 0, 0, .5) 0 1px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, .5) 0 1px 3px;
+  -o-box-shadow: rgba(0, 0, 0, .5) 0 1px 3px;
+  box-shadow: rgba(0, 0, 0, .5) 0 1px 3px;
+  position: relative;
+  top: -2px;
+
+  /* Scale a little bit every piece and  */
+  /* This transform is not working on webkit because it renders the rotation and scale inside the column */
+  /*-webkit-transform: scale(1.05) rotate(-0.3deg);*/
+  -moz-transform: scale(1.05) rotate(-0.3deg);
+  -o-transform: scale(1.05) rotate(-0.3deg);
+  transform: scale(1.05) rotate(-0.3deg);
+}
+
+
+
+/*
+ * MEDIA QUERIES: the basic CSS works showing a "single column" layout, and depending on the viewport size it'll have more columns.
+ * Even with the lack of support of CSS3 columns and media queries in most versions of Internet Explorer (oh surprise!)
+ * the page will still work fine, but it'll only show the single column layout (and won't have gradients nor transitions)
+*/
+@media only screen and (min-width : 481px) {
+  /* Style adjustments for viewports 481px and over go here */
+  .gallery {
+    -moz-column-count: 2;
+    -moz-column-gap: 15px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 15px;
+    column-count: 2;
+    column-gap: 15px;
+  }
+}
+
+@media only screen and (min-width : 769px) {
+  /* Style adjustments for viewports 769px and over go here */
+  .gallery {
+    -moz-column-count: 3;
+    -moz-column-gap: 15px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 15px;
+    column-count: 3;
+    column-gap: 15px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  /* Style adjustments for viewports 1280px and over go here */
+  .gallery {
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 20px;
+  }
+  
+  .wrapper {
+    max-width: 1280px;
+  }
+}
+
+/* Print styles: thanks to HTML5 Boilerplate (http://html5boilerplate.com/) */
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
